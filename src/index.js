@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import Login from './container/login/login'
+import Reg from './container/reg/reg'
+import './index.css';
+
+
+
+// ReactDOM.render(<Login/>, document.getElementById('root'));
+ReactDOM.render(<Reg/>, document.getElementById('root'));
