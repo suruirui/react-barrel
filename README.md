@@ -10,3 +10,9 @@
 - 实现API：用户注册、检测用户名是否重复、登录、查询所有用户、根据id查询用户信息
 - src目录划分，包括component(组件)和container(页面)
 - 引入andt-mobile样式库，完成登录(login)，注册(reg)静态页面
+
+#### 0105
+- 完善后端API
+- 创建user.redux.js，定义user操作规则
+- 引入react-router分发路由
+- 实现登录、注册
