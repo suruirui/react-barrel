@@ -43,7 +43,7 @@ class Login extends Component{
 						{this.props.msg?<p className='error-msg'>{this.props.msg}</p>:null}
 						<InputItem onChange={v=>this.handleChange('username',v)}>用户名</InputItem>
 						<WhiteSpace/>
-						<InputItem onChange={v=>this.handleChange('pwd',v)}>密码</InputItem>
+						<InputItem type="password" onChange={v=>this.handleChange('pwd',v)}>密码</InputItem>
 						<WhiteSpace/>
 						<Button type='primary' onClick={this.handleLogin}>登录</Button>
 						<WhiteSpace/>

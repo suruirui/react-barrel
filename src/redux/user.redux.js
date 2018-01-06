@@ -33,7 +33,6 @@ export function user(state=initState,action){
 function regSuccess(data){
 	return {type:REG_SUCCESS,payload:data};
 }
-
 function loginSuccess(data){
 	return {type:LOGIN_SUCCESS,payload:data};
 }
@@ -42,7 +41,6 @@ function errorMsg(msg){
 }
 
 export function loadData(userInfo){
-	// console.log(loadData);
 	return {type:LOAD_DATA,payload:userInfo};
 }
 
@@ -73,7 +71,8 @@ export function reg({username,pwd,rePwd,type}){
 		axios.post('/users/reg',{username,pwd,type})
 			.then(res=>{
 					if (res.status==200&&res.data.code===0) {
-						dispatch(regSuccess({username,pwd,type}))
+						dispatch(errorMsg(res.data.msg))
+						// dispatch(regSuccess({username,pwd,type}))
 					}else{
 						dispatch(errorMsg(res.data.msg))
 					}
@@ -81,3 +80,4 @@ export function reg({username,pwd,rePwd,type}){
 			)
 	}
 }
+

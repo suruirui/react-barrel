@@ -99,7 +99,7 @@
         "import",
         {
           "libraryName": "antd-mobile",
-          "style": "css"
+          "style": true
         }
       ],
       "transform-decorators-legacy"
@@ -110,7 +110,14 @@
   },
   "devDependencies": {
     "antd-mobile": "^2.1.3",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4"
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5"
+  },
+  "theme": {
+      "brand-primary": "#41B883",
+      "brand-primary-tap": "#41B883",
+      "color-text-base":  "#333"
   },
   "proxy": "http://localhost:8888"
 }

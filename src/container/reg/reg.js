@@ -20,12 +20,13 @@ class Reg extends Component{
 		}
 		this.handleReg = this.handleReg.bind(this);
 	}
-
+	//监听用户输入
 	handleChange(k,v){
 		this.setState({
 			[k]:v
 		});
 	}
+	//注册
 	handleReg(){
 		this.props.reg(this.state);
 	}

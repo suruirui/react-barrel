@@ -11,7 +11,7 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
-
+const theme = require('../package.json').theme;
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
 const publicPath = '/';
@@ -156,14 +156,23 @@ module.exports = {
           // "style" loader turns CSS into JS modules that inject <style> tags.
           // In production, we use a plugin to extract that CSS to a file, but
           // in development "style" loader enables hot editing of CSS.
+          // {
+          //     test: /\.css$/,
+          //     include: /node_modules\/antd/,
+          //     use: [
+          //         'style-loader',
+          //         'css-loader',
+          //     ],
+          // },
           {
             test: /\.css$/,
+            // include: /node_modules\/antd/,
             use: [
               require.resolve('style-loader'),
               {
                 loader: require.resolve('css-loader'),
                 options: {
-                  importLoaders: 1,
+                  importLoaders: 1
                 },
               },
               {
@@ -187,6 +196,16 @@ module.exports = {
                 },
               },
             ],
+          },
+          //less 
+          {
+            test: /\.less$/,
+            use: [
+                'style-loader',
+                'css-loader',
+                {loader: 'less-loader', options: {modifyVars: theme}},
+            ],
+            include: /node_modules/,
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
